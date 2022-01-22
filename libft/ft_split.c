@@ -6,7 +6,7 @@
 /*   By: cmichael <cmichael@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 15:25:55 by cmichael          #+#    #+#             */
-/*   Updated: 2022/01/13 11:14:50 by cmichael         ###   ########.fr       */
+/*   Updated: 2022/01/21 12:34:10 by cmichael         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -106,6 +106,8 @@ char	**ft_split(char const *s, char c)
 	size_t		length;
 	int			*lengths;
 
+	if (!s)
+		return (NULL);
 	length = count_len(s, c);
 	lengths = count_lengths(s, c, length);
 	if (!lengths)

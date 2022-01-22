@@ -6,7 +6,7 @@
 /*   By: cmichael <cmichael@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 15:25:55 by cmichael          #+#    #+#             */
-/*   Updated: 2021/10/24 12:01:18 by cmichael         ###   ########.fr       */
+/*   Updated: 2022/01/21 12:08:49 by cmichael         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,6 +18,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	length;
 	char	*result;
 
+	if (!s1 || !set)
+		return (0);
 	trim_left = 0;
 	trim_right = 0;
 	length = ft_strlen((char *)s1);

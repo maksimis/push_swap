@@ -16,6 +16,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*result;
 	unsigned int	i;
 
+	if (!s)
+		return (NULL);
 	result = ft_strdup((char *)s);
 	if (!result)
 		return (NULL);
