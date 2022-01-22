@@ -9,9 +9,7 @@ int main(int argc, char **argv)
 	i = 1;
 	while (i <= argc)
 	{
-		ft_putnbr_fd(123, 1);
-		write(1, argv[i], 2);
-		write(1, "\n", 1);
+		ft_putendl_fd(argv[i], 1);
 		i++;
 	}
 	
