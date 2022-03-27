@@ -42,14 +42,16 @@ int main(int argc, char **argv)
 		splited_args++;
 	}
 	list_a = i_l_new(1);
-	list_b = i_l_new(2);
+	list_b = i_l_new(10);
+	i_l_add_back(&list_a, i_l_new(2));
 	i_l_add_back(&list_a, i_l_new(3));
-	i_l_add_back(&list_b, i_l_new(4));
+	i_l_add_back(&list_b, i_l_new(11));
+	i_l_add_back(&list_b, i_l_new(12));
 	i_l_iter(list_a, ft_putnbr);
 	i_l_iter(list_b, ft_putnbr);
-	pa(&list_a, &list_b);
-	pb(&list_a, &list_b);
-	//ss(&list_a, &list_b);
+	ra(&list_a);
+	rb(&list_b);
+	rr(&list_a, &list_b);
 	i_l_iter(list_a, ft_putnbr);
 	i_l_iter(list_b, ft_putnbr);
 	return (1);

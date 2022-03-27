@@ -1,6 +1,6 @@
 # include "../main.h"
 
-void	swap(t_int_list **list, char *str)
+void	swap(t_int_list **list, char *command)
 {
 	t_int_list *temp1;
 	t_int_list *temp2;
@@ -12,7 +12,7 @@ void	swap(t_int_list **list, char *str)
 		*list = (*list)->next;;
 		(*list)->next = temp2;
 		(*list)->next->next = temp1;
-		ft_putendl_fd(str, 1);
+		ft_putendl_fd(command, 1);
 	}
 }
 

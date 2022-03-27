@@ -23,5 +23,8 @@ void		sb(t_int_list **list);
 void		ss(t_int_list **list_a, t_int_list **list_b);
 void 		pa(t_int_list **list_a, t_int_list **list_b);
 void 		pb(t_int_list **list_a, t_int_list **list_b);
+void		ra(t_int_list **list_a);
+void		rb(t_int_list **list_b);
+void		rr(t_int_list **list_a, t_int_list **list_b);
 
 #endif
