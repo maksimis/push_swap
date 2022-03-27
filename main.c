@@ -37,8 +37,8 @@ int main(int argc, char **argv)
 	free(all_arg);
 	while (*splited_args)
 	{
-		ft_putendl_fd(*splited_args, 1);
-		free(*splited_args);
+//		ft_putendl_fd(*splited_args, 1);
+//		free(*splited_args);
 		splited_args++;
 	}
 	list_a = i_l_new(1);
@@ -47,8 +47,8 @@ int main(int argc, char **argv)
 	i_l_add_back(&list_b, i_l_new(4));
 	i_l_iter(list_a, ft_putnbr);
 	i_l_iter(list_b, ft_putnbr);
-	sa(&list_a);
-	sb(&list_b);
+	pa(&list_a, &list_b);
+	pb(&list_a, &list_b);
 	//ss(&list_a, &list_b);
 	i_l_iter(list_a, ft_putnbr);
 	i_l_iter(list_b, ft_putnbr);

@@ -21,5 +21,7 @@ int			i_l_size(t_int_list *lst);
 void		sa(t_int_list **list);
 void		sb(t_int_list **list);
 void		ss(t_int_list **list_a, t_int_list **list_b);
+void 		pa(t_int_list **list_a, t_int_list **list_b);
+void 		pb(t_int_list **list_a, t_int_list **list_b);
 
 #endif
