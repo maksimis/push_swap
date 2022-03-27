@@ -21,16 +21,15 @@ LIBRARIES = -lft -L$(LIBFT_DIRECTORY)
 
 all: ${NAME}
 
-$(NAME): ${LIBFT} ${OBJS} ${HEADER}
-		${CC} ${CFLAGS} -o ${NAME} ${OBJS} ${LIBRARIES} 
+$(NAME): ${OBJS} ${HEADER}
+	make -C libft
+	${CC} ${CFLAGS} -o ${NAME} ${OBJS} ${LIBRARIES}
 
 clean:
 	 @${RM} ${OBJS} ${OBJS_B}
 
 fclean: 	clean
+			make -C libft fclean
 			${RM} ${NAME}
 
 re:	fclean all
-
-libft:
-	cd ${LIBFT_DIRECTORY} && make && cd ..
