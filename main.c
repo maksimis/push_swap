@@ -13,9 +13,12 @@ int main(int argc, char **argv)
 	char *tmp;
 	char *tmp2;
 	char **splited_args;
+	char **splited_args_temp;
 	t_int_list	*list_a;
 	t_int_list	*list_b;
 
+	list_a = 0;
+	list_b = 0;
 	if (argc == 1)
 		return (0);
 	i = 1;
@@ -35,24 +38,19 @@ int main(int argc, char **argv)
 	}
 	splited_args = ft_split(all_arg, ' ');
 	free(all_arg);
-	while (*splited_args)
+	splited_args_temp = splited_args;
+	while (*splited_args_temp)
 	{
-//		ft_putendl_fd(*splited_args, 1);
-//		free(*splited_args);
-		splited_args++;
+		i_l_add_back(&list_a, i_l_new(ft_atoi(*splited_args_temp)));
+		ft_putendl_fd(*splited_args_temp, 1);
+		free(*splited_args_temp);
+		splited_args_temp++;
 	}
-	list_a = i_l_new(1);
-	list_b = i_l_new(10);
-	i_l_add_back(&list_a, i_l_new(2));
-	i_l_add_back(&list_a, i_l_new(3));
-	i_l_add_back(&list_b, i_l_new(11));
-	i_l_add_back(&list_b, i_l_new(12));
-	i_l_iter(list_a, ft_putnbr);
-	i_l_iter(list_b, ft_putnbr);
-	rra(&list_a);
-	rrb(&list_b);
-	rrr(&list_a, &list_b);
-	i_l_iter(list_a, ft_putnbr);
-	i_l_iter(list_b, ft_putnbr);
+	free(splited_args);
+//	i_l_iter(list_a, ft_putnbr);
+//	i_l_iter(list_a, ft_putnbr);
+//	i_l_iter(list_b, ft_putnbr);
+	i_l_clear(&list_a);
+	i_l_clear(&list_b);
 	return (1);
 }
