@@ -7,6 +7,8 @@ int main(int argc, char **argv)
 	char *tmp;
 	char *tmp2;
 	char **splited_args;
+	t_int_list	*list_a;
+	t_int_list	*list_b;
 
 	if (argc == 1)
 		return (0);
@@ -33,5 +35,10 @@ int main(int argc, char **argv)
 		free(*splited_args);
 		splited_args++;
 	}
+	list_a = i_l_new(1);
+	list_b = i_l_new(1);
+	sa(list_a);
+	sb(list_b);
+	ss(list_a, list_b);
 	return (1);
 }
