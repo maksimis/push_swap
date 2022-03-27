@@ -1,18 +1,32 @@
 # include "../main.h"
 
-void	sa(t_int_list *list)
+void	swap(t_int_list **list, char *str)
 {
-	(void) list;
-	ft_putendl_fd("sa", 1);
+	t_int_list *temp1;
+	t_int_list *temp2;
+
+	if (i_l_size(*list) >= 2)
+	{
+		temp1 = (*list)->next->next;
+		temp2 = *list;
+		*list = (*list)->next;;
+		(*list)->next = temp2;
+		(*list)->next->next = temp1;
+		ft_putendl_fd(str, 1);
+	}
 }
 
-void	sb(t_int_list *list)
+void	sa(t_int_list **list)
 {
-	(void) list;
-	ft_putendl_fd("sb", 1);
+	swap(list, "sa");
 }
 
-void	ss(t_int_list *list_a, t_int_list *list_b)
+void	sb(t_int_list **list)
+{
+	swap(list, "sb");
+}
+
+void	ss(t_int_list **list_a, t_int_list **list_b)
 {
 	sa(list_a);
 	sb(list_b);

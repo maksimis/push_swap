@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "../main.h"
 
-void	ft_int_lstadd_back(t_int_list **lst, t_int_list *new)
+void	i_l_add_back(t_int_list **lst, t_int_list *new)
 {
 	t_int_list	*last;
 

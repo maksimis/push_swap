@@ -1,5 +1,11 @@
 #include "main.h"
 
+void ft_putnbr(int a)
+{
+	ft_putnbr_fd(a, 1);
+	ft_putendl_fd("", 1);
+}
+
 int main(int argc, char **argv)
 {
 	int	i;
@@ -36,9 +42,15 @@ int main(int argc, char **argv)
 		splited_args++;
 	}
 	list_a = i_l_new(1);
-	list_b = i_l_new(1);
-	sa(list_a);
-	sb(list_b);
-	ss(list_a, list_b);
+	list_b = i_l_new(2);
+	i_l_add_back(&list_a, i_l_new(3));
+	i_l_add_back(&list_b, i_l_new(4));
+	i_l_iter(list_a, ft_putnbr);
+	i_l_iter(list_b, ft_putnbr);
+	sa(&list_a);
+	sb(&list_b);
+	//ss(&list_a, &list_b);
+	i_l_iter(list_a, ft_putnbr);
+	i_l_iter(list_b, ft_putnbr);
 	return (1);
 }

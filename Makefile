@@ -2,7 +2,7 @@ NAME = push_swap
 
 SRCS = main.c utils/i_l_add_back.c utils/i_l_add_front.c \
 		utils/i_l_new.c utils/i_l_size.c utils/i_l_clear.c \
-		utils/i_l_delone.c utils/i_l_iter.c \
+		utils/i_l_delone.c utils/i_l_iter.c utils/i_l_last.c\
 		utils/operations1.c utils/operations2.c utils/operations3.c
 
 HEADER = main.h
