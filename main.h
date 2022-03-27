@@ -26,5 +26,8 @@ void 		pb(t_int_list **list_a, t_int_list **list_b);
 void		ra(t_int_list **list_a);
 void		rb(t_int_list **list_b);
 void		rr(t_int_list **list_a, t_int_list **list_b);
+void		rra(t_int_list **list_a);
+void		rrb(t_int_list **list_b);
+void		rrr(t_int_list **list_a, t_int_list **list_b);
 
 #endif

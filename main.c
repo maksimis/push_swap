@@ -49,9 +49,9 @@ int main(int argc, char **argv)
 	i_l_add_back(&list_b, i_l_new(12));
 	i_l_iter(list_a, ft_putnbr);
 	i_l_iter(list_b, ft_putnbr);
-	ra(&list_a);
-	rb(&list_b);
-	rr(&list_a, &list_b);
+	rra(&list_a);
+	rrb(&list_b);
+	rrr(&list_a, &list_b);
 	i_l_iter(list_a, ft_putnbr);
 	i_l_iter(list_b, ft_putnbr);
 	return (1);
