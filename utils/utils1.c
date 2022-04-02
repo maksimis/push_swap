@@ -6,6 +6,12 @@ void	error_and_exit(void)
 	exit(1);
 }
 
+void	clear_error_and_exit(t_int_list *a)
+{
+	i_l_clear(&a);
+	error_and_exit();
+}
+
 void	check_has_dup(t_int_list *list)
 {
 	t_int_list *copy;

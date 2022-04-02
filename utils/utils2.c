@@ -29,7 +29,5 @@ void reverse_a(t_int_list **list_a, t_int_list **list_b, int len) {
 }
 
 void sort(t_int_list **list_a, t_int_list **list_b, int len) {
-	(void ) list_a;
-	(void ) list_b;
-	(void) len;
+	a_to_b(list_a, list_b, len);
 }

@@ -2,6 +2,7 @@
 # define FT_PUSH_SWAP_H
 
 #include <unistd.h>
+#include <stdbool.h>
 #include "libft/libft.h"
 
 typedef struct s_int_list
@@ -9,6 +10,16 @@ typedef struct s_int_list
 	int					content;
 	struct s_int_list	*next;
 }	t_int_list;
+
+typedef struct s_info
+{
+	int	pvt_a; //int	pvt_less;
+	int	pvt_b; //int	pvt_greater;
+	int	cnt_ra;
+	int	cnt_rb;
+	int	cnt_pa;
+	int	cnt_pb;
+}				t_info;
 
 t_int_list	*i_l_new(int content);
 void		i_l_add_back(t_int_list **lst, t_int_list *new);
@@ -36,5 +47,15 @@ int			is_asc(t_int_list *list, int len);
 void 		init_stack(t_int_list **list, int argc, char **argv);
 void 		reverse_a(t_int_list **list_a, t_int_list **list_b, int len);
 void 		sort(t_int_list **list_a, t_int_list **list_b, int len);
+int	get_pvt(t_int_list *head, int cnt, int *arr);
+int	free_arr_then_get_ret(int *arr, int ret);
+void	rewind_stack_a(t_int_list **a, int cnt_ra);
+void	a_to_b(t_int_list **a, t_int_list **b, int cnt);
+void	b_to_a(t_int_list **a, t_int_list **b, int cnt);
+int	*create_arr(t_int_list *a, int cnt);
+void	clear_error_and_exit(t_int_list *a);
+bool	break_a_to_b(t_int_list **a, t_int_list **b, int cnt);
+bool	break_b_to_a(t_int_list **a, t_int_list **b, int cnt);
+void	rewind_stack_b(t_int_list **b, int cnt_rb);
 
 #endif
