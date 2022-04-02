@@ -1,5 +1,7 @@
 #include "main.h"
 
+
+
 void ft_putnbr(int a)
 {
 	ft_putnbr_fd(a, 1);
@@ -8,45 +10,20 @@ void ft_putnbr(int a)
 
 int main(int argc, char **argv)
 {
-	int	i;
-	char *all_arg;
-	char *tmp;
-	char *tmp2;
-	char **splited_args;
-	char **splited_args_temp;
 	t_int_list	*list_a;
 	t_int_list	*list_b;
+	int 		len;
 
 	list_a = 0;
 	list_b = 0;
 	if (argc == 1)
-		return (0);
-	i = 1;
-	all_arg = ft_strdup("");
-	while (i < argc)
-	{
-		if (ft_strlen(all_arg) > 0)
-		{
-			tmp2 = all_arg;
-			all_arg = ft_strjoin(all_arg, " ");
-			free(tmp2);
-		}
-		tmp = all_arg;
-		all_arg = ft_strjoin(all_arg, argv[i]);
-		free(tmp);
-		i++;
-	}
-	splited_args = ft_split(all_arg, ' ');
-	free(all_arg);
-	splited_args_temp = splited_args;
-	while (*splited_args_temp)
-	{
-		i_l_add_back(&list_a, i_l_new(ft_atoi(*splited_args_temp)));
-		ft_putendl_fd(*splited_args_temp, 1);
-		free(*splited_args_temp);
-		splited_args_temp++;
-	}
-	free(splited_args);
+		error_and_exit();
+	init_stack(&list_a, argc, argv);
 	check_has_dup(list_a);
+	len = i_l_size(list_a);
+	if (len >= 2 && is_desc(list_a, len))
+		reverse_a(&list_a, &list_b, len);
+	else if (len >= 3 && !is_asc(list_a, len))
+		sort(&list_a, &list_b, len);
 	return (1);
 }

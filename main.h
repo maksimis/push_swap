@@ -31,5 +31,10 @@ void		rrb(t_int_list **list_b);
 void		rrr(t_int_list **list_a, t_int_list **list_b);
 void		error_and_exit();
 void		check_has_dup(t_int_list *list);
+int			is_desc(t_int_list *list, int len);
+int			is_asc(t_int_list *list, int len);
+void 		init_stack(t_int_list **list, int argc, char **argv);
+void 		reverse_a(t_int_list **list_a, t_int_list **list_b, int len);
+void 		sort(t_int_list **list_a, t_int_list **list_b, int len);
 
 #endif

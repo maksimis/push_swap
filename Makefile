@@ -4,7 +4,7 @@ SRCS = main.c utils/i_l_add_back.c utils/i_l_add_front.c \
 		utils/i_l_new.c utils/i_l_size.c utils/i_l_clear.c \
 		utils/i_l_delone.c utils/i_l_iter.c utils/i_l_last.c\
 		utils/push.c utils/swap.c utils/rotate.c utils/reverse.c \
-		utils/utils1.c
+		utils/utils1.c utils/utils2.c
 
 SRCS_B = bonus/checker.c
 
