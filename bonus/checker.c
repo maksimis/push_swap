@@ -1,10 +1,4 @@
-#include "main.h"
-
-void ft_putnbr(int a)
-{
-	ft_putnbr_fd(a, 1);
-	ft_putendl_fd("", 1);
-}
+#include "checker.h"
 
 int main(int argc, char **argv)
 {
@@ -14,13 +8,10 @@ int main(int argc, char **argv)
 	char *tmp2;
 	char **splited_args;
 	char **splited_args_temp;
-	t_int_list	*list_a;
-	t_int_list	*list_b;
+	int *stack_a;
+	int *stack_b;
+	int length;
 
-	list_a = 0;
-	list_b = 0;
-	if (argc == 1)
-		return (0);
 	i = 1;
 	all_arg = ft_strdup("");
 	while (i < argc)
@@ -39,14 +30,23 @@ int main(int argc, char **argv)
 	splited_args = ft_split(all_arg, ' ');
 	free(all_arg);
 	splited_args_temp = splited_args;
+	length = i;
+	stack_a = malloc(sizeof(int) * length);
+	stack_b = malloc(sizeof(int) * length);
+	i = 0;
 	while (*splited_args_temp)
 	{
-		i_l_add_back(&list_a, i_l_new(ft_atoi(*splited_args_temp)));
-		ft_putendl_fd(*splited_args_temp, 1);
+		stack_a[i] = ft_atoi(*splited_args_temp);
 		free(*splited_args_temp);
 		splited_args_temp++;
+		i++;
 	}
-	free(splited_args);
-	check_has_dup(list_a);
+	i = 0;
+	while (i < length)
+	{
+		ft_putnbr_fd(stack_a[i], 1);
+		ft_putendl_fd("", 1);
+		i++;
+	}
 	return (1);
 }

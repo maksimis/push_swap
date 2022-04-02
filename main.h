@@ -29,5 +29,7 @@ void		rr(t_int_list **list_a, t_int_list **list_b);
 void		rra(t_int_list **list_a);
 void		rrb(t_int_list **list_b);
 void		rrr(t_int_list **list_a, t_int_list **list_b);
+void		error_and_exit();
+void		check_has_dup(t_int_list *list);
 
 #endif
