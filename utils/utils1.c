@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils1.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cmichael <cmichael@student.21-school.ru>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/03 11:28:26 by cmichael          #+#    #+#             */
+/*   Updated: 2022/04/03 11:28:26 by cmichael         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "../main.h"
 
 void	error_and_exit(void)
@@ -14,7 +25,7 @@ void	clear_error_and_exit(t_int_list *a)
 
 void	check_has_dup(t_int_list *list)
 {
-	t_int_list *copy;
+	t_int_list	*copy;
 
 	if (list->next)
 		copy = list->next;
@@ -36,7 +47,7 @@ void	check_has_dup(t_int_list *list)
 
 int	is_desc(t_int_list *list, int len)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < len)
@@ -50,7 +61,7 @@ int	is_desc(t_int_list *list, int len)
 
 int	is_asc(t_int_list *list, int len)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < len)
@@ -62,14 +73,14 @@ int	is_asc(t_int_list *list, int len)
 	return (1);
 }
 
-void init_stack(t_int_list **list, int argc, char **argv)
+void	init_stack(t_int_list **list, int argc, char **argv)
 {
-	int	i;
-	char *all_arg;
-	char *tmp;
-	char *tmp2;
-	char **splited_args;
-	char **splited_args_temp;
+	int		i;
+	char	*all_arg;
+	char	*tmp;
+	char	*tmp2;
+	char	**splited_args;
+	char	**splited_args_temp;
 
 	i = 1;
 	all_arg = ft_strdup("");

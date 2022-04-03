@@ -1,18 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cmichael <cmichael@student.21-school.ru>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/03 12:16:48 by cmichael          #+#    #+#             */
+/*   Updated: 2022/04/03 12:16:58 by cmichael         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "main.h"
 
-
-
-void ft_putnbr(int a)
+void	ft_putnbr(int a)
 {
 	ft_putnbr_fd(a, 1);
 	ft_putendl_fd("", 1);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_int_list	*list_a;
 	t_int_list	*list_b;
-	int 		len;
+	int			len;
 
 	list_a = 0;
 	list_b = 0;

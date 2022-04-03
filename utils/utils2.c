@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils2.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cmichael <cmichael@student.21-school.ru>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/03 11:28:27 by cmichael          #+#    #+#             */
+/*   Updated: 2022/04/03 12:19:04 by cmichael         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "../main.h"
 
-
-void reverse_a(t_int_list **list_a, t_int_list **list_b, int len) {
+void	reverse_a(t_int_list **list_a, t_int_list **list_b, int len)
+{
 	int		i;
 
 	i = 0;
@@ -28,6 +39,7 @@ void reverse_a(t_int_list **list_a, t_int_list **list_b, int len) {
 	}
 }
 
-void sort(t_int_list **list_a, t_int_list **list_b, int len) {
+void	sort(t_int_list **list_a, t_int_list **list_b, int len)
+{
 	a_to_b(list_a, list_b, len);
 }

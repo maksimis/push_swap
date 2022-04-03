@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   a_to_b.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cmichael <cmichael@student.21-school.ru>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/03 11:27:59 by cmichael          #+#    #+#             */
+/*   Updated: 2022/04/03 12:23:40 by cmichael         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "../main.h"
 
 void	a_to_b(t_int_list **a, t_int_list **b, int cnt)
 {
 	t_info	info;
+	int		*arr;
 
 	if (break_a_to_b(a, b, cnt))
 		return ;
-	int *arr = create_arr(*a, cnt);
+	arr = create_arr(*a, cnt);
 	info.pvt_a = get_pvt(*a, cnt, arr);
 	info.cnt_ra = 0;
 	info.cnt_pb = 0;
