@@ -39,7 +39,38 @@ void	reverse_a(t_int_list **list_a, t_int_list **list_b, int len)
 	}
 }
 
-void	sort(t_int_list **list_a, t_int_list **list_b, int len)
+int	get_min_val(t_int_list *head)
 {
-	a_to_b(list_a, list_b, len);
+	t_int_list	*cur;
+	int			min_val;
+
+	cur = head->next;
+	min_val = head->content;
+	while (1)
+	{
+		if (cur == NULL)
+			break ;
+		if (min_val > cur->content)
+			min_val = cur->content;
+		cur = cur->next;
+	}
+	return (min_val);
+}
+
+int	get_max_val(t_int_list *head)
+{
+	t_int_list	*cur;
+	int			max_val;
+
+	cur = head->next;
+	max_val = head->content;
+	while (1)
+	{
+		if (cur == NULL)
+			break ;
+		if (max_val < cur->content)
+			max_val = cur->content;
+		cur = cur->next;
+	}
+	return (max_val);
 }

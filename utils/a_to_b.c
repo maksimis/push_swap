@@ -11,89 +11,67 @@
 /* ************************************************************************** */
 #include "../main.h"
 
-void	a_to_b(t_int_list **a, t_int_list **b, int cnt)
+void	conquer_a(t_int_list **a, t_int_list **b, int cnt)
 {
-	t_info	info;
-	int		*arr;
-
-	if (break_a_to_b(a, b, cnt))
-		return ;
-	arr = create_arr(*a, cnt);
-	info.pvt_a = get_pvt(*a, cnt, arr);
-	info.cnt_ra = 0;
-	info.cnt_pb = 0;
-	while (cnt-- > 0)
+	if (cnt == 2 || cnt == 3)
 	{
-		if ((*a)->content > info.pvt_a)
+		if ((*a)->content > (*a)->next->content)
+			sa(a);
+		if (cnt == 3 && !is_asc(*a, cnt))
 		{
 			ra(a);
-			++(info.cnt_ra);
+			sa(a);
+			rra(a);
+			if ((*a)->content > (*a)->next->content)
+				sa(a);
+		}
+	}
+	else if (cnt == 4)
+		sort_4(a, b);
+	else if (cnt == 5)
+		sort_5(a, b);
+}
+
+void	divide_a(t_int_list **a, t_int_list **b, int cnt, t_param *param)
+{
+	while (cnt > 0)
+	{
+		if ((*a)->content <= param->pvt_less)
+		{
+			pb(a, b);
+			++(param->cnt_pb);
+		}
+		else if ((*a)->content > param->pvt_greater)
+		{
+			ra(a);
+			++(param->cnt_ra);
 		}
 		else
 		{
 			pb(a, b);
-			++(info.cnt_pb);
+			++(param->cnt_pb);
+			rb(b);
+			++(param->cnt_rb);
 		}
+		--cnt;
 	}
-	rewind_stack_a(a, info.cnt_ra);
-	a_to_b(a, b, info.cnt_ra);
-	b_to_a(a, b, info.cnt_pb);
 }
 
-bool	break_a_to_b(t_int_list **a, t_int_list **b, int cnt)
+void	a_to_b(t_int_list **a, t_int_list **b, int cnt)
 {
-	if (cnt == 1)
-		return (true);
-	else if (cnt == 2)
+	t_param	param;
+
+	if (cnt <= 5)
 	{
-		if (is_desc(*a, 2))
-			reverse_a(a, b, 2);
-		return (true);
+		if (!is_asc(*a, cnt))
+			conquer_a(a, b, cnt);
+		return ;
 	}
-	return (false);
-}
-
-int	*create_arr(t_int_list *a, int cnt)
-{
-	int	*arr;
-
-	arr = (int *)malloc(sizeof(int) * cnt);
-	if (arr == NULL)
-		clear_error_and_exit(a);
-	return (arr);
-}
-
-int	get_pvt(t_int_list *head, int cnt, int *arr)
-{
-	int	i;
-	int	j;
-	int	cnt_greater;
-
-	i = 0;
-	while (i < cnt)
-	{
-		arr[i] = head->content;
-		head = head->next;
-		++i;
-	}
-	i = -1;
-	while (++i < cnt)
-	{
-		j = -1;
-		cnt_greater = 0;
-		while (++j < cnt)
-		{
-			if (arr[i] < arr[j])
-				++cnt_greater;
-		}
-		if (cnt_greater == cnt / 2)
-			break ;
-	}
-	return (free_arr_then_get_ret(arr, arr[i]));
-}
-
-int	free_arr_then_get_ret(int *arr, int ret)
-{
-	free(arr);
-	return (ret);
+	param = (t_param){0, };
+	set_pvt(*a, cnt, 'a', &param);
+	divide_a(a, b, cnt, &param);
+	rewind_stack(a, b, param.cnt_rb);
+	a_to_b(a, b, param.cnt_ra);
+	b_to_a(a, b, param.cnt_rb);
+	b_to_a(a, b, param.cnt_pb - param.cnt_rb);
 }
