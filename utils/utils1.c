@@ -50,10 +50,11 @@ int	is_desc(t_int_list *list, int len)
 	int	i;
 
 	i = 0;
-	while (i < len)
+	while (list && i < len)
 	{
 		if (list->next && list->next->content > list->content)
 			return (0);
+		list = list->next;
 		i++;
 	}
 	return (1);
@@ -64,10 +65,11 @@ int	is_asc(t_int_list *list, int len)
 	int	i;
 
 	i = 0;
-	while (i < len)
+	while (list && i < len)
 	{
 		if (list->next && list->next->content < list->content)
 			return (0);
+		list = list->next;
 		i++;
 	}
 	return (1);
