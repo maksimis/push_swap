@@ -11,18 +11,6 @@
 /* ************************************************************************** */
 #include "../main.h"
 
-void	error_and_exit(void)
-{
-	ft_putendl_fd("Error", 2);
-	exit(1);
-}
-
-void	clear_error_and_exit(t_int_list *a)
-{
-	i_l_clear(&a);
-	error_and_exit();
-}
-
 void	check_has_dup(t_int_list *list)
 {
 	t_int_list	*copy;
@@ -75,14 +63,12 @@ int	is_asc(t_int_list *list, int len)
 	return (1);
 }
 
-void	init_stack(t_int_list **list, int argc, char **argv)
+char	*concat_args(int argc, char **argv)
 {
 	int		i;
 	char	*all_arg;
 	char	*tmp;
 	char	*tmp2;
-	char	**splited_args;
-	char	**splited_args_temp;
 
 	i = 1;
 	all_arg = ft_strdup("");
@@ -99,6 +85,16 @@ void	init_stack(t_int_list **list, int argc, char **argv)
 		free(tmp);
 		i++;
 	}
+	return (all_arg);
+}
+
+void	init_stack(t_int_list **list, int argc, char **argv)
+{
+	char	*all_arg;
+	char	**splited_args;
+	char	**splited_args_temp;
+
+	all_arg = concat_args(argc, argv);
 	splited_args = ft_split(all_arg, ' ');
 	free(all_arg);
 	splited_args_temp = splited_args;

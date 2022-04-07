@@ -26,14 +26,15 @@ int	main(int argc, char **argv)
 	list_a = 0;
 	list_b = 0;
 	if (argc == 1)
-		error_and_exit();
+		exit(1);
 	init_stack(&list_a, argc, argv);
 	check_has_dup(list_a);
 	len = i_l_size(list_a);
-	//i_l_iter(list_a, ft_putnbr);
 	if (len >= 2 && is_desc(list_a, len))
 		reverse_a(&list_a, &list_b, len);
 	else if (len >= 3 && !is_asc(list_a, len))
 		sort(&list_a, &list_b, len);
+	i_l_clear(&list_a);
+	i_l_clear(&list_b);
 	return (0);
 }
