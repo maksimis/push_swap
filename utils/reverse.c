@@ -37,7 +37,7 @@ void	rra(t_int_list **list_a)
 void	rrb(t_int_list **list_b)
 {
 	reverse(list_b);
-	ft_putendl_fd("rra", 1);
+	ft_putendl_fd("rrb", 1);
 }
 
 void	rrr(t_int_list **list_a, t_int_list **list_b)
