@@ -100,7 +100,7 @@ void	init_stack(t_int_list **list, int argc, char **argv)
 	splited_args_temp = splited_args;
 	while (*splited_args_temp)
 	{
-		i_l_add_back(list, i_l_new(ft_atoi(*splited_args_temp)));
+		i_l_add_back(list, i_l_new(atoi_with_check(*splited_args_temp)));
 		free(*splited_args_temp);
 		splited_args_temp++;
 	}

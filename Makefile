@@ -5,12 +5,12 @@ SRCS = main.c utils/i_l_add_back.c utils/i_l_add_front.c \
 		utils/i_l_delone.c utils/i_l_iter.c utils/i_l_last.c\
 		utils/push.c utils/swap.c utils/rotate.c utils/reverse.c \
 		utils/utils1.c utils/utils2.c utils/a_to_b.c utils/b_to_a.c \
-		utils/exits.c utils/sorts.c utils/set_pvt.c
+		utils/exits.c utils/sorts.c utils/set_pvt.c utils/atoi_with_check.c
 
 SRCS_B = bonus/checker.c utils/utils1.c utils/i_l_clear.c utils/i_l_size.c\
          utils/push.c utils/swap.c utils/rotate.c utils/reverse.c \
          utils/i_l_add_back.c utils/i_l_add_front.c \
-         utils/i_l_new.c utils/exits.c
+         utils/i_l_new.c utils/exits.c utils/atoi_with_check.c
 
 NAME_B = checker
 

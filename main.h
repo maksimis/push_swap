@@ -80,5 +80,6 @@ void		sort_minmax(t_int_list **a, t_int_list **b, int min_val);
 int			get_min_val(t_int_list *head);
 int			get_max_val(t_int_list *head);
 void		switch_op(char *command, t_int_list **list_a, t_int_list **list_b);
+int			atoi_with_check(const char *str);
 
 #endif
