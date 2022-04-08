@@ -49,7 +49,8 @@ void	sort_4(t_int_list **a, t_int_list **b)
 	if ((*a)->content > (*a)->next->content)
 		sa(a);
 	pb(a, b);
-	if ((*a)->content > (*a)->next->content && (*b)->content < (*b)->next->content)
+	if ((*a)->content > (*a)->next->content
+		&& (*b)->content < (*b)->next->content)
 		ss(a, b);
 	else if ((*a)->content > (*a)->next->content)
 		sa(a);
