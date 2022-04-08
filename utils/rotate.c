@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "../main.h"
 
-void	rotate(t_int_list **list, char *command)
+bool	rotate(t_int_list **list, char *command)
 {
 	t_int_list	*temp1;
 
@@ -21,8 +21,10 @@ void	rotate(t_int_list **list, char *command)
 		*list = (*list)->next;
 		temp1->next = 0;
 		i_l_add_back(list, temp1);
-		ft_putendl_fd(command, 1);
+		if (command)
+			ft_putendl_fd(command, 1);
 	}
+	return (true);
 }
 
 void	ra(t_int_list **list_a)

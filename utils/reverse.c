@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "../main.h"
 
-void	reverse(t_int_list **list)
+bool	reverse(t_int_list **list)
 {
 	t_int_list	*last;
 	t_int_list	*pre_last;
@@ -25,6 +25,7 @@ void	reverse(t_int_list **list)
 		pre_last->next = 0;
 		i_l_add_front(list, last);
 	}
+	return (true);
 }
 
 void	rra(t_int_list **list_a)

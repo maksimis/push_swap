@@ -42,6 +42,10 @@ void		i_l_delone(t_int_list *lst);
 void		i_l_iter(t_int_list *lst, void (*f)(int));
 t_int_list	*i_l_last(t_int_list *lst);
 int			i_l_size(t_int_list *lst);
+bool		push(t_int_list **source, t_int_list **destination, char *command);
+bool		rotate(t_int_list **list, char *command);
+bool		reverse(t_int_list **list);
+bool		swap(t_int_list **list, char *command);
 void		sa(t_int_list **list);
 void		sb(t_int_list **list);
 void		ss(t_int_list **list_a, t_int_list **list_b);
@@ -75,5 +79,6 @@ void		sort_5(t_int_list **a, t_int_list **b);
 void		sort_minmax(t_int_list **a, t_int_list **b, int min_val);
 int			get_min_val(t_int_list *head);
 int			get_max_val(t_int_list *head);
+void		switch_op(char *command, t_int_list **list_a, t_int_list **list_b);
 
 #endif

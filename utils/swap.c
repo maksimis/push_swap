@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "../main.h"
 
-void	swap(t_int_list **list, char *command)
+bool	swap(t_int_list **list, char *command)
 {
 	t_int_list	*temp1;
 	t_int_list	*temp2;
@@ -23,8 +23,10 @@ void	swap(t_int_list **list, char *command)
 		*list = (*list)->next;
 		(*list)->next = temp2;
 		(*list)->next->next = temp1;
-		ft_putendl_fd(command, 1);
+		if (command)
+			ft_putendl_fd(command, 1);
 	}
+	return (true);
 }
 
 void	sa(t_int_list **list)

@@ -7,13 +7,14 @@ SRCS = main.c utils/i_l_add_back.c utils/i_l_add_front.c \
 		utils/utils1.c utils/utils2.c utils/a_to_b.c utils/b_to_a.c \
 		utils/exits.c utils/sorts.c utils/set_pvt.c
 
-SRCS_B = bonus/checker.c
+SRCS_B = bonus/checker.c utils/utils1.c utils/i_l_clear.c utils/i_l_size.c\
+         utils/push.c utils/swap.c utils/rotate.c utils/reverse.c \
+         utils/i_l_add_back.c utils/i_l_add_front.c \
+         utils/i_l_new.c utils/exits.c
 
 NAME_B = checker
 
 HEADER = main.h
-
-HEADER_B = bonus/checker.h
 
 LIBFT = $(LIBFT_DIRECTORY)libft.a
 LIBFT_DIRECTORY = ./libft/
@@ -44,8 +45,8 @@ fclean: 	clean
 			make -C libft fclean
 			${RM} ${NAME}
 
-bonus:  ${OBJS_B} ${HEADER_B}
+bonus:  ${OBJS_B} ${HEADER}
 		make -C libft
-		${CC} ${CFLAGS} -o ${NAME_B} ${OBJS_B}
+		${CC} ${CFLAGS} -o ${NAME_B} ${OBJS_B} ${LIBRARIES}
 
 re:	fclean all

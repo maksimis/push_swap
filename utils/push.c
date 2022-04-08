@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "../main.h"
 
-void	push(t_int_list **source, t_int_list **destination, char *command)
+bool	push(t_int_list **source, t_int_list **destination, char *command)
 {
 	t_int_list	*temp;
 
@@ -20,8 +20,10 @@ void	push(t_int_list **source, t_int_list **destination, char *command)
 		temp = *source;
 		*source = (*source)->next;
 		i_l_add_front(destination, temp);
-		ft_putendl_fd(command, 1);
+		if (command)
+			ft_putendl_fd(command, 1);
 	}
+	return (true);
 }
 
 void	pa(t_int_list **list_a, t_int_list **list_b)
