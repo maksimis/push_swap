@@ -58,7 +58,7 @@ int	atoi_with_check(const char *str)
 	result = 0;
 	while (*tmp)
 	{
-		if (is_nbr(*tmp))
+		if (is_nbr(*tmp) && result < 2147483648)
 		{
 			result *= 10;
 			result += (*tmp - '0');
