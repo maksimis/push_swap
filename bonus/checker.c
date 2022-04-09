@@ -31,9 +31,9 @@ void	switch_op(char *command, t_int_list **a, t_int_list **b)
 		ft_putstr_fd("", STDOUT_FILENO);
 	else if (!ft_strcmp(command, "ss") && swap(a, NULL) && swap(b, NULL))
 		ft_putstr_fd("", STDOUT_FILENO);
-	else if (!ft_strcmp(command, "pa") && push(a, b, NULL))
+	else if (!ft_strcmp(command, "pa") && push(b, a, NULL))
 		ft_putstr_fd("", STDOUT_FILENO);
-	else if (!ft_strcmp(command, "pb") && push(b, a, NULL))
+	else if (!ft_strcmp(command, "pb") && push(a, b, NULL))
 		ft_putstr_fd("", STDOUT_FILENO);
 	else if (!ft_strcmp(command, "ra") && rotate(a, NULL))
 		ft_putstr_fd("", STDOUT_FILENO);
