@@ -73,8 +73,9 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		exit(1);
 	init_stack(&list_a, argc, argv);
-	check_has_dup(list_a);
 	len = i_l_size(list_a);
+	if (len >= 2)
+		check_has_dup(list_a);
 	check(&list_a, &list_a, len);
 	i_l_clear(&list_a);
 	i_l_clear(&list_b);
