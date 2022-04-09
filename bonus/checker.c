@@ -70,7 +70,7 @@ static void	check(t_int_list **a, t_int_list **b, int len)
 	}
 	free(line);
 	line = NULL;
-	if (is_asc(*a, len))
+	if (is_asc(*a, len) && i_l_size(*a) == len)
 		ft_putendl_fd("OK", STDOUT_FILENO);
 	else
 		ft_putendl_fd("KO", STDOUT_FILENO);
