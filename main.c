@@ -28,8 +28,9 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		exit(1);
 	init_stack(&list_a, argc, argv);
-	check_has_dup(list_a);
 	len = i_l_size(list_a);
+	if (len >= 2)
+		check_has_dup(list_a);
 	if (len >= 2 && is_desc(list_a, len))
 		reverse_a(&list_a, &list_b, len);
 	else if (len >= 3 && !is_asc(list_a, len))

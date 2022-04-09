@@ -44,6 +44,7 @@ clean:
 fclean: 	clean
 			make -C libft fclean
 			${RM} ${NAME}
+			${RM} ${NAME_B}
 
 bonus:  ${OBJS_B} ${HEADER}
 		make -C libft
