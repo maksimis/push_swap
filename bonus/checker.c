@@ -11,30 +11,42 @@
 /* ************************************************************************** */
 #include "../main.h"
 
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	while (*s1 && *s2)
+	{
+		if (*s1 != *s2)
+			return (*(unsigned char *)s1 - *(unsigned char *)s2);
+		s1++;
+		s2++;
+	}
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+}
+
 void	switch_op(char *command, t_int_list **a, t_int_list **b)
 {
-	if (!ft_strncmp(command, "sa", 2) && swap(a, NULL))
+	if (!ft_strcmp(command, "sa") && swap(a, NULL))
 		ft_putstr_fd("", STDOUT_FILENO);
-	else if (!ft_strncmp(command, "sb", 2) && swap(b, NULL))
+	else if (!ft_strcmp(command, "sb") && swap(b, NULL))
 		ft_putstr_fd("", STDOUT_FILENO);
-	else if (!ft_strncmp(command, "ss", 2) && swap(a, NULL) && swap(b, NULL))
+	else if (!ft_strcmp(command, "ss") && swap(a, NULL) && swap(b, NULL))
 		ft_putstr_fd("", STDOUT_FILENO);
-	else if (!ft_strncmp(command, "pa", 2) && push(a, b, NULL))
+	else if (!ft_strcmp(command, "pa") && push(a, b, NULL))
 		ft_putstr_fd("", STDOUT_FILENO);
-	else if (!ft_strncmp(command, "pb", 2) && push(b, a, NULL))
+	else if (!ft_strcmp(command, "pb") && push(b, a, NULL))
 		ft_putstr_fd("", STDOUT_FILENO);
-	else if (!ft_strncmp(command, "ra", 2) && rotate(a, NULL))
+	else if (!ft_strcmp(command, "ra") && rotate(a, NULL))
 		ft_putstr_fd("", STDOUT_FILENO);
-	else if (!ft_strncmp(command, "rb", 2) && rotate(b, NULL))
+	else if (!ft_strcmp(command, "rb") && rotate(b, NULL))
 		ft_putstr_fd("", STDOUT_FILENO);
-	else if (!ft_strncmp(command, "rr", 2)
+	else if (!ft_strcmp(command, "rr")
 		&& rotate(a, NULL) && rotate(b, NULL))
 		ft_putstr_fd("", STDOUT_FILENO);
-	else if (!ft_strncmp(command, "rra", 3) && reverse(a))
+	else if (!ft_strcmp(command, "rra") && reverse(a))
 		ft_putstr_fd("", STDOUT_FILENO);
-	else if (!ft_strncmp(command, "rrb", 3) && reverse(b))
+	else if (!ft_strcmp(command, "rrb") && reverse(b))
 		ft_putstr_fd("", STDOUT_FILENO);
-	else if (!ft_strncmp(command, "rrr", 3) && reverse(a) && reverse(b))
+	else if (!ft_strcmp(command, "rrr") && reverse(a) && reverse(b))
 		ft_putstr_fd("", STDOUT_FILENO);
 	else
 		error_and_exit();
