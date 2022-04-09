@@ -40,7 +40,11 @@ int	extract_sign(const char *str)
 	if (is_plusminus(*str))
 	{
 		if (*str == '-')
+		{
+			if (ft_strlen(str) == 1)
+				error_and_exit();
 			sign = sign * -1;
+		}
 	}
 	return (sign);
 }
