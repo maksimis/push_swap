@@ -59,7 +59,9 @@ static void	check(t_int_list **a, t_int_list **b, int len)
 	line = get_next_line(STDIN_FILENO);
 	while (line)
 	{
-		if (ft_strncmp(line, "Error", 5) == 0)
+		if (line[ft_strlen(line) - 1] == '\n')
+			line[ft_strlen(line) - 1] = 0;
+		if (ft_strcmp(line, "Error") == 0)
 			error_and_exit();
 		switch_op(line, a, b);
 		free(line);
