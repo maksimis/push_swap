@@ -90,7 +90,7 @@ int	main(int argc, char **argv)
 	len = i_l_size(list_a);
 	if (len >= 2)
 		check_has_dup(list_a);
-	check(&list_a, &list_a, len);
+	check(&list_a, &list_b, len);
 	i_l_clear(&list_a);
 	i_l_clear(&list_b);
 	return (1);
